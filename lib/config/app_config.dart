@@ -1,6 +1,7 @@
 class AppConfig {
-  static const String appName = 'Jewelry Manager';
-  static const String apiBaseUrl = 'https://api.yourjewelryapp.com/api/v1';
+  static const String appName = 'Jewellery Manager';
+  static const String apiBaseUrl =
+      'https://srijewellery.aadhiandcomarket.com/api/v1';
 
   // API Endpoints
   static const String loginEndpoint = '/auth/login';

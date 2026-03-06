@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/routes/app_routes.dart';
 import '../../../core/utils/app_helpers.dart';
-import '../../../core/widgets/loading_widget.dart';
+import '../../../core/widgets/app_drawer.dart';
 import '../../auth/controllers/auth_controller.dart';
 import '../controllers/dashboard_controller.dart';
 
@@ -17,6 +17,7 @@ class DashboardPage extends StatelessWidget {
     final AuthController authController = Get.find<AuthController>();
 
     return Scaffold(
+      drawer: const AppDrawer(),
       appBar: AppBar(
         title: const Text(AppStrings.dashboard),
         actions: [
@@ -27,25 +28,25 @@ class DashboardPage extends StatelessWidget {
         ],
       ),
       body: Obx(() {
-        if (controller.isLoading.value) {
-          return const LoadingWidget();
-        }
+        // if (controller.isLoading.value) {
+        //   return const LoadingWidget();
+        // }
 
-        if (controller.errorMessage.value.isNotEmpty) {
-          return Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(controller.errorMessage.value),
-                const SizedBox(height: 16),
-                ElevatedButton(
-                  onPressed: controller.loadDashboardData,
-                  child: const Text('Retry'),
-                ),
-              ],
-            ),
-          );
-        }
+        // if (controller.errorMessage.value.isNotEmpty) {
+        //   return Center(
+        //     child: Column(
+        //       mainAxisAlignment: MainAxisAlignment.center,
+        //       children: [
+        //         Text(controller.errorMessage.value),
+        //         const SizedBox(height: 16),
+        //         ElevatedButton(
+        //           onPressed: controller.loadDashboardData,
+        //           child: const Text('Retry'),
+        //         ),
+        //       ],
+        //     ),
+        //   );
+        // }
 
         final stats = controller.dashboardStats.value;
 
@@ -143,11 +144,9 @@ class DashboardPage extends StatelessWidget {
                     Expanded(
                       child: _buildActionCard(
                         context,
-                        title: 'Reports',
+                        title: 'Pledge',
                         icon: Icons.assessment,
-                        onTap: () {
-                          AppHelpers.showInfoSnackbar('Reports coming soon!');
-                        },
+                        onTap: () => Get.toNamed(AppRoutes.girviForm),
                       ),
                     ),
                   ],
