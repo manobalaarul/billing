@@ -23,5 +23,6 @@ class InitialBinding extends Bindings {
     Get.lazyPut<GoldRateRepository>(() => GoldRateRepository());
     Get.lazyPut<CustomerRepository>(() => CustomerRepository());
     Get.lazyPut<GirviRepository>(() => GirviRepository());
+    
   }
 }

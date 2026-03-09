@@ -12,6 +12,7 @@ import '../../modules/girvi/views/girvi_form_page.dart';
 import '../../modules/girvi/views/girvi_list_page.dart';
 import '../../modules/gold_rate/bindings/gold_rate_binding.dart';
 import '../../modules/gold_rate/views/gold_rate_form_page.dart';
+import '../../modules/grivi_redemption/views/girvi_redemption.dart';
 
 class AppRoutes {
   static const String login = '/login';
@@ -21,6 +22,7 @@ class AppRoutes {
   static const String customerList = '/customer-list';
   static const String girviForm = '/girvi-form';
   static const String girviList = '/girvi-list';
+  static const String girviRedemption = '/girvi-redemption';
 
   static final routes = [
     GetPage(name: login, page: () => const LoginPage(), binding: AuthBinding()),
@@ -52,6 +54,11 @@ class AppRoutes {
     GetPage(
       name: girviList,
       page: () => const GirviListPage(),
+      binding: GirviBindings(),
+    ),
+    GetPage(
+      name: girviRedemption,
+      page: () => const GirviRedemptionPage(),
       binding: GirviBindings(),
     ),
   ];

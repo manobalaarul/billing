@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
+import '../../../core/constants/app_constants.dart';
 import '../../../data/models/girvi_model.dart';
 
 // ─── Colors ───────────────────────────────────────────────────────────────────
@@ -336,7 +337,8 @@ class _GirviFormPageState extends State<GirviFormPage> {
 
   PreferredSizeWidget _buildAppBar() {
     return AppBar(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.primary,
+
       elevation: 0,
       surfaceTintColor: Colors.transparent,
       leading: IconButton(

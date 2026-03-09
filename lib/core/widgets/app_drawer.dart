@@ -96,7 +96,7 @@ class AppDrawer extends StatelessWidget {
                     _buildDrawerItem(
                       icon: Icons.money,
                       title: 'Redeem',
-                      route: AppRoutes.customerList,
+                      route: AppRoutes.girviRedemption,
                     ),
                     _buildDrawerItem(
                       icon: Icons.offline_pin_sharp,
